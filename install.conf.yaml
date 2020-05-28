@@ -8,3 +8,7 @@
     ~/.scripts:
       force: true
       path: scripts
+
+    ~/.config/alacritty:
+      force: true
+      path: alacritty
