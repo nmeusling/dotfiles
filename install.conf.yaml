@@ -1,0 +1,10 @@
+- clean: ['~']
+
+- link:
+    ~/.i3:
+      force: true
+      path: i3
+
+    ~/.scripts:
+      force: true
+      path: scripts
