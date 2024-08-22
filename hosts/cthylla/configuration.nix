@@ -101,6 +101,11 @@
     ];
   };
 
+  # set zsh as default shell
+  environment.shells = with pkgs; [ zsh ];
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
   # Install firefox.
   programs.firefox.enable = true;
   programs.nh = {
@@ -118,9 +123,17 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     git
-    vscode
     nh
+    signal-desktop
+    vscode
   ];
+
+  # kernel version
+  boot.kernelPackages = pkgs.linuxPackages_6_10;
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
