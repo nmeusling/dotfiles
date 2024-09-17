@@ -23,6 +23,7 @@
   home.packages = with pkgs; [
     python3
     nixpkgs-fmt
+    devenv
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

@@ -17,7 +17,7 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       # allowed-users = [ "thamenato" "thales" ];
-      # trusted-users = [ "thamenato" "thales" ];
+      trusted-users = [ "nmeusling" ];
     };
   };
 
@@ -126,6 +126,7 @@
     nh
     signal-desktop
     vscode
+    gparted
   ];
 
   # kernel version
@@ -135,6 +136,10 @@
     allowReboot = false;
   };
 
+  fileSystems."/home/nmeusling/Data" = {
+    device = "/dev/disk/by-label/Data";
+    fsType = "ext4";
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

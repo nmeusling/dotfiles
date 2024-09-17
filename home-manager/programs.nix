@@ -28,7 +28,7 @@
 
     oh-my-zsh = {
       enable = true;
-      # theme = "bureau";
+      theme = "bureau";
       plugins = [
         "git"
         "git-auto-fetch"
