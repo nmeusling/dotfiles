@@ -4,6 +4,9 @@
     enable = true;
     userEmail = "15682036+nmeusling@users.noreply.github.com";
     userName = "nmeusling";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 
   programs.zsh = {
