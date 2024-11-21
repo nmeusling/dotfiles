@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  programs.direnv.enable = true;
+  programs.lazygit.enable = true;
+
   programs.git = {
     enable = true;
     userEmail = "15682036+nmeusling@users.noreply.github.com";
