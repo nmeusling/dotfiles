@@ -1,7 +1,20 @@
 { pkgs, ... }:
 {
-  programs.direnv.enable = true;
-  programs.lazygit.enable = true;
+  programs = {
+    direnv.enable = true;
+
+    lazygit.enable = true;
+
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+
+      options = [
+        "--cmd"
+        "cd"
+      ];
+    };
+  };
 
   programs.git = {
     enable = true;
@@ -56,6 +69,7 @@
       charliermarsh.ruff
       codezombiech.gitignore
       dracula-theme.theme-dracula
+      golang.go
       jnoortheen.nix-ide
       mikestead.dotenv
       ms-python.python
