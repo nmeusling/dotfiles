@@ -81,6 +81,7 @@
       vscodevim.vim
       waderyan.gitblame
       yzhang.markdown-all-in-one
+      vue.volar
     ];
 
     userSettings = {
