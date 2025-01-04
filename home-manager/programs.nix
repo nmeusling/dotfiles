@@ -80,6 +80,7 @@
       vscode-icons-team.vscode-icons
       vscodevim.vim
       waderyan.gitblame
+      james-yu.latex-workshop
       yzhang.markdown-all-in-one
       vue.volar
     ];
