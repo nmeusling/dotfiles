@@ -103,6 +103,7 @@
   # set zsh as default shell
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
+  programs.sway.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
   # Install firefox.
