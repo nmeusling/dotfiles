@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs = {
     direnv.enable = true;
 
@@ -63,6 +62,19 @@
     };
   };
 
+  programs.ghostty = {
+    enable = true;
+
+    enableZshIntegration = true;
+    # installVimSyntax = true;
+    settings = {
+      theme = "";
+      font-size = 10;
+      title = " ";
+      # window-decoration = false;
+    };
+  };
+
   programs.vscode = {
     enable = true;
 
@@ -81,6 +93,7 @@
       jnoortheen.nix-ide
       mikestead.dotenv
       ms-python.python
+      ms-python.debugpy
       redhat.vscode-yaml
       streetsidesoftware.code-spell-checker
       tamasfe.even-better-toml
@@ -88,6 +101,7 @@
       vscode-icons-team.vscode-icons
       vscodevim.vim
       waderyan.gitblame
+      james-yu.latex-workshop
       yzhang.markdown-all-in-one
       vue.volar
     ];
@@ -99,7 +113,7 @@
       "workbench.iconTheme" = "vscode-icons";
 
       # editor
-      "editor.rulers" = [ 80 120 ];
+      "editor.rulers" = [80 120];
       "editor.fontFamily" = "'JetBrainsMono NF', 'monospace'";
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
@@ -109,17 +123,16 @@
       };
 
       # languages
-      "[python]" = { "editor.defaultFormatter" = "charliermarsh.ruff"; };
-      "[markdown]" = { "editor.defaultFormatter" = "yzhang.markdown-all-in-one"; };
-
+      "[python]" = {"editor.defaultFormatter" = "charliermarsh.ruff";};
+      "[markdown]" = {"editor.defaultFormatter" = "yzhang.markdown-all-in-one";};
+      "nix.formatterPath" = "${pkgs.alejandra}/bin/alejandra";
       "git.inputValidationLength" = 72;
       "git.inputValidationSubjectLength" = 50;
       "[git-commit]" = {
-        "editor.rulers" = [ 72 50 ];
+        "editor.rulers" = [72 50];
         "editor.wordWrap" = "off";
         "workbench.editor.restoreViewState" = false;
       };
-
     };
   };
 }
