@@ -23,6 +23,14 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+    aliases = {
+      pu = "push";
+      co = "checkout";
+      cm = "commit";
+      st = "status";
+      sw = "switch";
+      root = "rev-parse --show-toplevel";
+    };
   };
 
   programs.zsh = {
