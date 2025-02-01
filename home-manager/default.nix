@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./programs.nix
-    ./sway.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -23,7 +24,7 @@
   # environment.
   home.packages = with pkgs; [
     # python3
-    nixpkgs-fmt
+    alejandra
     devenv
     direnv
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -57,6 +58,10 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+  };
+  home.shellAliases = {
+    nh-home = "nh home switch -a $HOME/dotfiles";
+    nh-os = "nh os switch -a $HOME/Projects/nixos-hosts";
   };
 
   # Home Manager can also manage your environment variables through
