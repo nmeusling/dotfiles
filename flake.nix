@@ -55,6 +55,7 @@
         modules = [
           inputs.niri.homeModules.niri
           ./home-manager
+          ./hosts/zoth-ommog
         ];
       };
     };
