@@ -1,5 +1,18 @@
-{
+{pkgs, ...}: {
   programs.niri.settings = {
+    spawn-at-startup = [
+      {
+        argv = [
+          "${pkgs.swaybg}/bin/swaybg"
+          "-m"
+          "fill"
+          "-o"
+          "HDMI-A-1"
+          "-i"
+          "${../../backgrounds/wallhaven-39ykq6_3840x2160.jpg}"
+        ];
+      }
+    ];
     outputs = {
       "HDMI-A-1" = {
         mode = {

@@ -108,7 +108,6 @@
 
       spawn-at-startup = [
         {argv = ["waybar"];}
-        {argv = ["bitwarden"];}
       ];
 
       binds = with config.lib.niri.actions; let
