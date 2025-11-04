@@ -28,6 +28,7 @@
     alejandra
     devenv
     direnv
+    google-chrome
 
     # fonts
     font-awesome
