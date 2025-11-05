@@ -50,12 +50,20 @@
     };
 
     homeConfigurations = {
-      nmeusling = home-manager.lib.homeManagerConfiguration {
+      "nmeusling@zoth-ommog" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           inputs.niri.homeModules.niri
           ./home-manager
           ./hosts/zoth-ommog
+        ];
+      };
+      "nmeusling@cthylla" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          inputs.niri.homeModules.niri
+          ./home-manager
+          ./hosts/cthylla
         ];
       };
     };
