@@ -98,6 +98,7 @@
         james-yu.latex-workshop
         yzhang.markdown-all-in-one
         vue.volar
+        ms-playwright.playwright
       ];
 
       userSettings = {
