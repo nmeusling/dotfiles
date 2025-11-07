@@ -52,6 +52,7 @@
   home.shellAliases = {
     nh-home = "nh home switch -a $HOME/dotfiles -b .bak";
     nh-os = "nh os switch -a $HOME/Projects/nixos-hosts";
+    lg = "lazygit";
   };
 
   fonts.fontconfig.enable = true;
