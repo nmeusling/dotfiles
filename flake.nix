@@ -66,6 +66,14 @@
           ./hosts/cthylla
         ];
       };
+      "nmeusling@kassogtha" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          inputs.niri.homeModules.niri
+          ./home-manager
+          ./hosts/kassogtha
+        ];
+      };
     };
   };
 }
