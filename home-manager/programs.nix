@@ -15,6 +15,10 @@
     };
   };
 
+  programs.alacritty = {
+    enable = true;
+  };
+
   programs.git = {
     enable = true;
     lfs.enable = true;
@@ -52,19 +56,6 @@
         "git"
         "git-auto-fetch"
       ];
-    };
-  };
-
-  programs.ghostty = {
-    enable = true;
-
-    enableZshIntegration = true;
-    # installVimSyntax = true;
-    settings = {
-      theme = "";
-      font-size = 10;
-      title = " ";
-      # window-decoration = false;
     };
   };
 }

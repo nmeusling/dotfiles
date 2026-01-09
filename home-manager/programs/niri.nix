@@ -5,7 +5,7 @@
   ...
 }: {
   programs.niri = let
-    terminal = "ghostty";
+    terminal = "alacritty";
     menu = "rofi -show drun -show-icons";
     lockscreen = "hyprlock";
   in {
@@ -22,6 +22,12 @@
       input = {
         # Focus windows and outputs automatically when moving the mouse into them.
         # Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+        keyboard = {
+          xkb = {
+            layout = "us";
+            variant = "intl";
+          };
+        };
         focus-follows-mouse = {
           enable = true;
           max-scroll-amount = "0%";
