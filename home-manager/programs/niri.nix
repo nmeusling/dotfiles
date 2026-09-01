@@ -1,6 +1,7 @@
 # Reference docs: https://github.com/sodiboo/niri-flake/blob/main/docs.md
 {
   config,
+  inputs,
   pkgs,
   ...
 }: {
@@ -10,6 +11,7 @@
     lockscreen = "hyprlock";
   in {
     enable = true;
+    package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-stable;
     settings = {
       prefer-no-csd = true;
       hotkey-overlay = {

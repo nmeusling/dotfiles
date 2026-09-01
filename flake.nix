@@ -68,6 +68,9 @@
       };
       "nmeusling@kassogtha" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs;
+        };
         modules = [
           inputs.niri.homeModules.niri
           ./home-manager
