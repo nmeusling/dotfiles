@@ -20,7 +20,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Flake framework
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:denful/import-tree";
     niri.url = "github:sodiboo/niri-flake";
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -52,16 +61,24 @@
     homeConfigurations = {
       "nmeusling@zoth-ommog" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs;
+        };
         modules = [
           inputs.niri.homeModules.niri
+          inputs.noctalia.homeModules.default
           ./home-manager
           ./hosts/zoth-ommog
         ];
       };
       "nmeusling@cthylla" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs;
+        };
         modules = [
           inputs.niri.homeModules.niri
+          inputs.noctalia.homeModules.default
           ./home-manager
           ./hosts/cthylla
         ];
@@ -73,6 +90,7 @@
         };
         modules = [
           inputs.niri.homeModules.niri
+          inputs.noctalia.homeModules.default
           ./home-manager
           ./hosts/kassogtha
         ];

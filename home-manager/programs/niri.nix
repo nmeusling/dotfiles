@@ -114,10 +114,6 @@
         size = 24;
       };
 
-      spawn-at-startup = [
-        {argv = ["waybar"];}
-      ];
-
       binds = with config.lib.niri.actions; let
         brightnessclt = "${pkgs.brightnessctl}/bin/brightnessctl";
       in {
