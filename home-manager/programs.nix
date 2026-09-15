@@ -22,9 +22,9 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userEmail = "15682036+nmeusling@users.noreply.github.com";
-    userName = "nmeusling";
-    extraConfig = {
+    settings.user.email = "15682036+nmeusling@users.noreply.github.com";
+    settings.user.name = "nmeusling";
+    settings = {
       init.defaultBranch = "main";
     };
   };
@@ -44,7 +44,7 @@
       size = 10000;
     };
 
-    initExtra = ''
+    initContent = ''
       setopt HIST_SAVE_NO_DUPS
       setopt HIST_FIND_NO_DUPS
     '';
