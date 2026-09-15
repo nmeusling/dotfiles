@@ -14,13 +14,24 @@
       }
     ];
     outputs = {
+      "eDP-1" = {
+        mode = {
+          width = 1920;
+          height = 1080;
+          refresh = 144.000;
+        };
+      };
       "HDMI-A-1" = {
         mode = {
           width = 4096;
           height = 2160;
           refresh = 120.000;
         };
-        scale = 2;
+        scale = 1;
+        position = {
+          x = 1080;
+          y = 0;
+        };
       };
     };
   };
