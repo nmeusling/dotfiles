@@ -63,8 +63,8 @@
 
   programs.niri = let
     terminal = "alacritty";
-    menu = "rofi -show drun -show-icons";
-    lockscreen = "hyprlock";
+    menu = "noctalia msg panel-toggle launcher";
+    lockscreen = "noctalia msg lock";
   in {
     enable = true;
     package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-stable;
