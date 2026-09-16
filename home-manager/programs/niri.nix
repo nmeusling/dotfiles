@@ -5,6 +5,62 @@
   pkgs,
   ...
 }: {
+  services.kanshi = {
+    enable = true;
+    systemdTarget = "niri-session.target";
+
+    settings = [
+      {
+        profile = {
+          name = "laptop_only";
+          outputs = [
+            {
+              criteria = "eDP-1";
+              mode = "1920x1080@120.000";
+              scale = 1.0;
+            }
+          ];
+        };
+      }
+      {
+        profile = {
+          name = "laptop_lg";
+          outputs = [
+            {
+              criteria = "eDP-1";
+              status = "enable";
+              mode = "1920x1080@144.000";
+              scale = 1.0;
+              position = "1080,0";
+            }
+            {
+              criteria = "HDMI-A-1";
+              status = "enable";
+              mode = "1920x1080@60.000";
+              scale = 1.0;
+            }
+          ];
+        };
+      }
+      {
+        profile = {
+          name = "laptop_samsung";
+          outputs = [
+            {
+              criteria = "eDP-1";
+              status = "disable";
+            }
+            {
+              criteria = "DP-1";
+              status = "enable";
+              mode = "5120x1440@120.000";
+            }
+          ];
+        };
+      }
+    ];
+  };
+
   programs.niri = let
     terminal = "alacritty";
     menu = "rofi -show drun -show-icons";
