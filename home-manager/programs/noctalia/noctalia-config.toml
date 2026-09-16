@@ -1,0 +1,110 @@
+[backdrop]
+enabled = true
+
+[bar.widgets]
+capsule = false
+center = ["workspaces"]
+end = ["network", "battery", "tray", "control-center"]
+font_weight = 400
+margin_edge = 2
+margin_ends = 4
+position = "top"
+start = ["date", "Date_Space", "group:g1", "media"]
+thickness = 32
+
+[[bar.widgets.capsule_group]]
+fill = "surface_variant"
+id = "g1"
+members = ["cpu", "ram", "temp"]
+opacity = 1.0
+padding = 6.0
+
+[battery]
+warning_threshold = 30
+
+[idle]
+behavior_order = ["lock", "screen-off", "lock-and-suspend"]
+
+[idle.behavior.lock]
+action = "lock"
+enabled = true
+timeout = 600
+
+[idle.behavior.lock-and-suspend]
+action = "lock_and_suspend"
+enabled = false
+timeout = 900
+
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 660
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+
+[lockscreen_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+[plugins]
+enabled = ["noctalia/bongocat"]
+
+[shell]
+
+[[shell.session.actions]]
+action = "lock"
+enabled = true
+shortcut = "1"
+variant = "default"
+
+[[shell.session.actions]]
+action = "logout"
+enabled = true
+shortcut = "2"
+variant = "default"
+
+[[shell.session.actions]]
+action = "lock_and_suspend"
+enabled = false
+shortcut = "3"
+variant = "default"
+
+[[shell.session.actions]]
+action = "reboot"
+enabled = true
+shortcut = "4"
+variant = "default"
+
+[[shell.session.actions]]
+action = "shutdown"
+enabled = true
+shortcut = "5"
+variant = "destructive"
+
+# theme.source / theme.custom_palette / theme.mode come from stylix
+# (stylix.targets.noctalia), which writes a "stylix" custom palette.
+[theme]
+
+[theme.templates]
+enable_builtin_templates = false
+enable_community_templates = false
+
+[widget.Date_Space]
+length = 20
+type = "spacer"
+
+[widget.Date_Spacer]
+length = 40
+type = "spacer"
+
+[widget.cpu]
+label_min_width = 25
+
+[widget.date]
+format = "{:%Y-%m-%d %H:%M}"
+
+[widget.tray]
+drawer = true
