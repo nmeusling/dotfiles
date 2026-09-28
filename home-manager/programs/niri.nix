@@ -28,15 +28,15 @@
           outputs = [
             {
               criteria = "eDP-1";
-              status = "enable";
+              status = "disable";
               mode = "1920x1080@144.000";
               scale = 1.0;
               position = "1080,0";
             }
             {
-              criteria = "HDMI-A-1";
+              criteria = "DP-1";
               status = "enable";
-              mode = "1920x1080@60.000";
+              mode = "2560x1080@60.000";
               scale = 1.0;
             }
           ];
